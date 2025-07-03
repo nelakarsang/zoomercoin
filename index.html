@@ -29,27 +29,34 @@
       border-bottom: 6px dashed #ffe066;
       overflow: visible;
       z-index: 2;
+      min-height: 100px;
+      box-sizing: border-box;
     }
     .header-img-left, .header-img-right {
       position: absolute;
-      top: 60%;
-      transform: translateY(-20%);
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      height: 100%;
+      max-height: 120px;
+      width: auto;
       z-index: 3;
-      /* Remove width/height to use original image size */
-      /* Let them overflow header */
+      filter: drop-shadow(0 0 8px #ffe066);
     }
     .header-img-left {
-      left: -40px;
+      left: 0;
+      transform: rotate(-12deg);
     }
     .header-img-right {
-      right: -40px;
+      right: 0;
+      transform: rotate(12deg);
     }
     @media (max-width: 700px) {
+      header {
+        min-height: 60px;
+      }
       .header-img-left, .header-img-right {
-        max-width: 80px;
-        height: auto;
-        left: -10px;
-        right: -10px;
+        max-height: 60px;
       }
     }
     .hero {
@@ -233,9 +240,14 @@
       background: #fff;
     }
     @media (max-width: 700px) {
+      header {
+        min-height: 60px;
+      }
+      .header-img-left, .header-img-right {
+        max-height: 60px;
+      }
       .hero h1 { font-size: 2rem; }
       .section-title { font-size: 1.3rem; }
-      .header-img-left, .header-img-right { max-width: 80px; }
       .why-img-right { max-width: 70px; }
       .coming-img { max-width: 80px; }
       .buy-btn img { width: 24px; height: 24px; }
