@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>ZoomerCoin ($ZMR) - Gen Z’s Official Meme Coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
       margin: 0;
-      background: #f7fafc;
+      background: linear-gradient(135deg, #f7fafc 60%, #ffe066 100%);
       color: #222;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     header {
       background: #222;
@@ -21,76 +23,141 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: 'Luckiest Guy', cursive, sans-serif;
+      letter-spacing: 2px;
+      font-size: 1.2rem;
+      border-bottom: 6px dashed #ffe066;
+      overflow: visible;
+      z-index: 2;
     }
     .header-img-left, .header-img-right {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
+      position: absolute;
+      top: 60%;
+      transform: translateY(-20%);
+      z-index: 3;
+      /* Remove width/height to use original image size */
+      /* Let them overflow header */
     }
     .header-img-left {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
+      left: -40px;
     }
     .header-img-right {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
+      right: -40px;
+    }
+    @media (max-width: 700px) {
+      .header-img-left, .header-img-right {
+        max-width: 80px;
+        height: auto;
+        left: -10px;
+        right: -10px;
+      }
     }
     .hero {
-      background: #fff;
-      padding: 2rem 1rem;
+      background: #fffbe7;
+      padding: 2.5rem 1rem 2rem 1rem;
       text-align: center;
-      border-bottom: 2px solid #eee;
+      border-bottom: 4px dotted #ffb300;
       position: relative;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
     }
     .hero-img {
       max-width: 220px;
       width: 100%;
       margin-bottom: 1.2rem;
       border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px #ffe06699;
+      border: 4px solid #ffe066;
+      background: #fff;
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       margin-bottom: 0.5rem;
+      font-family: 'Luckiest Guy', cursive, sans-serif;
+      color: #ffb300;
+      text-shadow: 2px 2px 0 #fff, 4px 4px 0 #ffe066;
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin: 0.5rem 0;
+      color: #444;
+    }
+    .buy-btns {
+      margin: 2rem 0 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .buy-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      background: #ffe066;
+      color: #222;
+      border: 2px solid #ffb300;
+      border-radius: 30px;
+      padding: 0.8em 1.6em;
+      font-size: 1.1em;
+      font-family: 'Luckiest Guy', cursive, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 2px 8px #ffb30055;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+      margin-bottom: 0.5em;
+      position: relative;
+      z-index: 1;
+    }
+    .buy-btn:hover {
+      background: #fff176;
+      transform: scale(1.07) rotate(-2deg);
+      color: #d84315;
+    }
+    .buy-btn img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #ffb300;
+      box-shadow: 0 1px 4px #ffb30055;
     }
     .launch-btn {
       display: inline-block;
       margin-top: 1.5rem;
-      padding: 0.9rem 2.2rem;
-      font-size: 1.1rem;
-      background: #00e676;
-      color: #222;
+      padding: 1.1rem 2.5rem;
+      font-size: 1.2rem;
+      background: #ffb300;
+      color: #fff;
       border: none;
       border-radius: 30px;
       cursor: not-allowed;
       font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-family: 'Luckiest Guy', cursive, sans-serif;
+      box-shadow: 0 2px 8px #ffb30055;
       transition: background 0.2s;
       text-decoration: none;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
     }
     .about, .why, .coming, footer {
-      max-width: 600px;
+      max-width: 650px;
       margin: 2.5rem auto 0 auto;
       padding: 0 1rem;
     }
     .section-title {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
-      color: #00bfae;
+      color: #ffb300;
       text-align: center;
+      font-family: 'Luckiest Guy', cursive, sans-serif;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 0 #fff, 2px 2px 0 #ffe066;
     }
     ul {
       list-style: disc inside;
       margin: 1rem 0 1.5rem 0;
       padding: 0;
+      font-size: 1.1em;
     }
     .why-img-right {
       float: right;
@@ -98,22 +165,26 @@
       margin-left: 1rem;
       margin-bottom: 1rem;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px #ffe06699;
+      border: 3px solid #ffe066;
+      background: #fff;
     }
     .coming-img {
       display: block;
       margin: 0 auto 1.2rem auto;
       max-width: 180px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px #ffe06699;
+      border: 3px solid #ffe066;
+      background: #fff;
     }
     .coming ul {
       list-style: none;
       padding: 0;
     }
     .coming ul li::before {
-      content: "→ ";
-      color: #00bfae;
+      content: "👉 ";
+      color: #ffb300;
       font-weight: bold;
     }
     footer {
@@ -122,52 +193,78 @@
       background: #222;
       color: #fff;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       border-radius: 12px 12px 0 0;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+      border-top: 6px dashed #ffe066;
     }
     .social-links {
       margin-top: 1.2rem;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
       flex-wrap: wrap;
     }
     .social-links a {
-      color: #00e676;
+      color: #ffe066;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       transition: color 0.2s;
+      background: #222;
+      padding: 0.5em 1.2em;
+      border-radius: 20px;
+      border: 2px solid #ffe066;
+      margin-bottom: 0.5em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
     }
     .social-links a:hover {
-      color: #fff;
+      color: #222;
+      background: #ffe066;
+      border-color: #fff;
       text-decoration: underline;
     }
-    @media (max-width: 600px) {
+    .social-links img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    @media (max-width: 700px) {
       .hero h1 { font-size: 2rem; }
-      .section-title { font-size: 1.2rem; }
-      .header-img-left, .header-img-right { width: 36px; height: 36px; }
-      .why-img-right { max-width: 80px; }
-      .coming-img { max-width: 100px; }
+      .section-title { font-size: 1.3rem; }
+      .header-img-left, .header-img-right { max-width: 80px; }
+      .why-img-right { max-width: 70px; }
+      .coming-img { max-width: 80px; }
+      .buy-btn img { width: 24px; height: 24px; }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="images/logoleft.png" alt="Logo Left" class="header-img-left">
-    
     <div style="flex:1;">
       <h1>🚀 ZoomerCoin ($ZMR)</h1>
-      <p>Gen Z’s official meme coin.</p>
+      <p>Gen Z’s official meme coin. <span style="font-size:1.5em;">😜</span></p>
     </div>
     <img src="images/logoright.png" alt="Logo Right" class="header-img-right">
   </header>
 
   <section class="hero">
     <img src="images/lunchingsoon.png" alt="Launching Soon" class="hero-img">
-    <p>Born in the Himalayas. Raised by memes. Powered by Solana.</p>
+    <p>Born in the Himalayas. Raised by memes. Powered by Solana. <span style="font-size:1.2em;">🏔️🐶</span></p>
     <p>No utility. No roadmap. No promises.<br>
-    Just vibes, volatility &amp; victory.</p>
+    Just vibes, volatility &amp; victory. <span style="font-size:1.2em;">💥🚀</span></p>
+    <div class="buy-btns">
+      <a class="buy-btn" href="https://jup.ag/swap/SOL-ZMR" target="_blank">
+        <img src="images/jupiter.png" alt="Jupiter"> Buy on Jupiter
+      </a>
+      <a class="buy-btn" href="https://raydium.io/swap/" target="_blank">
+        <img src="images/raydium.png" alt="Raydium"> Buy on Raydium
+      </a>
+    </div>
     <a class="launch-btn" href="#">Launching Soon... Stay Zoomed 🐶🔥</a>
   </section>
 
@@ -175,27 +272,27 @@
     <div class="section-title">About</div>
     <p>
       ZoomerCoin is not here to build an ecosystem.<br>
-      It’s here to become the ecosystem... of chaos.
+      It’s here to become the ecosystem... of chaos. <span style="font-size:1.2em;">🤪</span>
     </p>
     <p>
       Inspired by Pepe’s attitude 🐸 and Shiba’s bark 🐕,<br>
       our Himalayan Mastiff is the last meme coin you'll ever need.
     </p>
     <p>
-      You either Zoom, or get Zoomed.
+      You either Zoom, or get Zoomed. <span style="font-size:1.2em;">⚡</span>
     </p>
   </section>
 
   <section class="why">
     <div class="section-title">Why Buy $ZMR?</div>
-    <img src="images/whybuyzommer_right.png" alt="Why Buy Zoomer" class="why-img-right">
+    <img src="images/whybuyzoomer_right.png" alt="Why Buy Zoomer" class="why-img-right">
     <ul>
       <li>Not a DAO. Not a DEX. Not a Launchpad.</li>
       <li>No staking. No farming. No false hope.</li>
     </ul>
     <p>
       Just memes, community &amp; pure degen energy.<br>
-      The real alpha? We’re not pretending to be more than we are.
+      The real alpha? We’re not pretending to be more than we are. <span style="font-size:1.2em;">🧃</span>
     </p>
     <div style="clear:both;"></div>
   </section>
@@ -215,11 +312,15 @@
     <p>
       $ZMR is a meme coin with no intrinsic value, no guarantees,<br>
       and no affiliation with sanity.<br>
-      Buy at your own risk. Zoom responsibly.
+      Buy at your own risk. Zoom responsibly. <span style="font-size:1.2em;">😅</span>
     </p>
     <div class="social-links">
-      <a href="https://twitter.com/ZoomerCoin" target="_blank">Twitter 🐦 @ZoomerCoin</a>
-      <a href="https://t.me/ZoomerCoin" target="_blank">Telegram ✈️ @ZoomerCoin</a>
+      <a href="https://twitter.com/ZoomerCoin" target="_blank">
+        <img src="images/twitter.png" alt="Twitter" style="background:#fff;"> Twitter
+      </a>
+      <a href="https://t.me/ZoomerCoin" target="_blank">
+        <img src="images/telegram.png" alt="Telegram" style="background:#fff;"> Telegram
+      </a>
     </div>
   </footer>
 </body>
