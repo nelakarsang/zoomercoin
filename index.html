@@ -16,15 +16,33 @@
     }
     header {
       background: #0b5ed7;
-      padding: 1rem 2rem;
+      padding: 0.8rem 2rem;
       color: white;
       position: sticky;
       top: 0;
       z-index: 100;
-    }
-    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       max-width: 900px;
       margin: 0 auto;
+      border-bottom: 2px solid #0849a7;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: default;
+    }
+    header .logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    nav {
       display: flex;
       gap: 1rem;
       font-weight: 600;
@@ -36,7 +54,8 @@
       border-radius: 4px;
       transition: background-color 0.3s ease;
     }
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       background-color: #0849a7;
     }
     main {
@@ -99,6 +118,32 @@
       margin-left: 1rem;
       margin-bottom: 0.7rem;
     }
+    footer {
+      background: #0b5ed7;
+      color: white;
+      text-align: center;
+      padding: 1rem 1rem 2rem;
+      font-size: 0.9rem;
+    }
+    footer .social-icons {
+      margin-bottom: 0.8rem;
+    }
+    footer a.social {
+      display: inline-block;
+      margin: 0 0.5rem;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a.social:hover {
+      color: #a5c9ff;
+    }
+    footer svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      fill: currentColor;
+    }
     /* Responsive */
     @media (max-width: 600px) {
       main {
@@ -108,13 +153,22 @@
         flex-wrap: wrap;
         gap: 0.5rem;
       }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/YourUsername/ZoomerCoin/main/logo.png" alt="ZoomerCoin Logo" />
+      ZoomerCoin
+    </div>
     <nav>
-      <a href="#about">About</a>
+      <a href="#about" class="active">About</a>
       <a href="#utilities">Utilities</a>
       <a href="#tokenomics">Tokenomics</a>
       <a href="#roadmap">Roadmap</a>
@@ -195,33 +249,4 @@
     <section id="community">
       <h2>Join the Community</h2>
       <p>
-        Connect with other Zoomers, share memes, get updates, and be part of the hype. Follow us on social media and join our Telegram group today!
-      </p>
-      <div class="buttons">
-        <a href="https://t.me/YourTelegramLink" class="btn" target="_blank" rel="noopener noreferrer">Join Telegram</a>
-        <a href="https://twitter.com/YourTwitterHandle" class="btn" target="_blank" rel="noopener noreferrer">Follow on X (Twitter)</a>
-      </div>
-    </section>
-
-    <section id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <dl>
-        <dt><strong>What is ZoomerCoin?</strong></dt>
-        <dd>ZoomerCoin ($ZMR) is a Solana-based meme coin inspired by viral communities like Pepe and Shiba Inu.</dd>
-        
-        <dt><strong>How can I buy $ZMR?</strong></dt>
-        <dd>You can buy $ZMR on Solana DEXs soon. Stay tuned for exchange listings.</dd>
-        
-        <dt><strong>Is ZoomerCoin launching on Binance?</strong></dt>
-        <dd>We are in talks and aiming for a Binance launch to expand our community globally.</dd>
-        
-        <dt><strong>Who is behind ZoomerCoin?</strong></dt>
-        <dd>An anonymous team of meme and blockchain enthusiasts focused on community and transparency.</dd>
-        
-        <dt><strong>How can I stake my tokens?</strong></dt>
-        <dd>Staking platform launch is planned in Q4 2025 — rewards for early supporters!</dd>
-      </dl>
-    </section>
-  </main>
-</body>
-</html>
+        Connect with
